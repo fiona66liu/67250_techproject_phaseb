@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets | MonoMuse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    </header>
+
+<nav class="nav_bar">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+
+    <div class="nav_links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="tickets.html" class="cta active">Buy Tickets</a>
+        <a href="checkout.html">Checkout</a>
+    </div>
+</nav>
+
+    <main class="main">
+        <h2>Buy Tickets</h2>
+
+        <p>Browse ticket pricing and available dates below. Click Buy Now to begin your purchase.</p>
+
+       <table>
+        <tr>
+            <th>Ticket Type</th>
+            <th>Description</th>
+            <th>Includes</th>
+            <th>Duration</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Adult</td>
+            <td>General admission for ages 18 and over</td>
+            <td>Full access to all exhibitions and interactive installations</td>
+            <td>All-day access</td>
+            <td>$18</td>
+        </tr>
+        <tr>
+            <td>Student</td>
+            <td>Valid student ID required</td>
+            <td>Discounted access with student ID</td>
+            <td>All-day access</td>
+            <td>$12</td>
+        </tr>
+        <tr>
+            <td>Member</td>
+            <td>Valid member ID required</td>
+            <td>Priority entry and exclusive previews</td>
+            <td>All-day plus early entry</td>
+            <td>$8</td>
+        </tr>
+    </table>
+
+        <h3>Available Dates This Month</h3>
+
+       <table>
+        <tr>
+            <th>Date</th>
+            <th>Availability</th>
+            <th>Spots Left</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>April 5, 2026</td>
+            <td><span class="available">Available</span></td>
+            <td>22</td>
+            <td><button onclick="showPurchaseForm('April 5, 2026')">Buy Now</button></td>
+        </tr>
+        <tr>
+            <td>April 12, 2026</td>
+            <td><span class="available">Available</span></td>
+            <td>38</td>
+            <td><button onclick="showPurchaseForm('April 12, 2026')">Buy Now</button></td>
+        </tr>
+        <tr>
+            <td>April 19, 2026</td>
+            <td><span class="available">Available</span></td>
+            <td>45</td>
+            <td><button onclick="showPurchaseForm('April 19, 2026')">Buy Now</button></td>
+        </tr>
+        <tr>
+            <td>April 26, 2026</td>
+            <td><span class="available">Available</span></td>
+            <td>52</td>
+            <td><button onclick="showPurchaseForm('April 26, 2026')">Buy Now</button></td>
+        </tr>
+    </table>
+
+        <form id="purchaseForm">
+            <h3>Complete Your Purchase</h3>
+
+            <label for="buyerName">Name:</label><br>
+            <input type="text" id="buyerName" name="buyerName" required><br><br>
+
+            <label for="buyerEmail">Email:</label><br>
+            <input type="email" id="buyerEmail" name="buyerEmail" required><br><br>
+
+            <label for="ticketCount">Number of Tickets:</label><br>
+            <input type="number" id="ticketCount" name="ticketCount" min="1" required><br><br>
+
+            <label for="selectedDate">Selected Date:</label><br>
+            <input type="text" id="selectedDate" name="selectedDate" readonly><br><br>
+
+            <button type="button" onclick="submitPurchase()">Submit</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+
+</div>
+
+</body>
+</html>

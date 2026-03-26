@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<link rel="stylesheet" href="./static/style.css">
+
+<title>MonoMuse</title>
+
+<script src="https://code.jquery.com/jquery-4.0.0-rc.1.min.js"></script>
+<script src="./static/script.js" defer></script>
+
+</head>
+
+<body onload="addYear()">
+
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    </header>
+
+    <nav class="nav_bar">
+
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+
+        <div class="nav_links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="views/explore.html">Explore</a>
+            <a href="views/exhibitions.html">Exhibitions</a>
+            <a href="views/tickets.html" class="cta">Buy Tickets</a>
+            <a href="views/checkout.html">Checkout</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <h2 id="greeting">Welcome to the MonoMuse Museum</h2>
+
+        <p>
+            MonoMuse is a contemporary museum where art, technology, and human creativity come together to create experiences you don't just observe but actively engage with. Each exhibition is designed to blur the line between viewer and creator.
+        </p>
+
+        <p id="shortIntro">
+            Step inside and interact with installations that respond to your movement, explore hands on digital exhibits, and experience how artists are using code, data, and emerging technologies as new creative mediums.
+        </p>
+
+        <p id="longIntro">
+            From AI generated artwork and immersive projection environments to creative coding labs and experimental media, MonoMuse reveals how innovation is reshaping artistic expression. It is not just about seeing the future of art it is about experiencing it as it unfolds.
+        </p>
+
+        <button id="readMore">Read More</button>
+        <button id="readLess">Read Less</button>
+
+        <section class="map_section">
+            <p>Explore the museum location using the interactive map below.</p>
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+
+</html>
