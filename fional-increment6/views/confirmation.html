@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation | MonoMuse</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Site JavaScript -->
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    </header>
+
+    <nav class="nav_bar">
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+
+        <div class="nav_links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html" class="cta">Buy Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <h1>Order Confirmation</h1>
+        <p id="confirmationMessage">
+            Thank you for your order.
+        </p>
+
+        <a href="../index.html" class="cta">Return Home</a>
+    </main>
+
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+
+</div>
+
+<!-- Confirmation page script -->
+<script>
+    const confirmationMessage = document.getElementById("confirmationMessage")
+    const orderDate = localStorage.getItem("orderDate")
+    const orderType = localStorage.getItem("orderType")
+    const orderQuantity = localStorage.getItem("orderQuantity")
+    const orderTotal = localStorage.getItem("orderTotal")
+
+    if (orderDate && orderType && orderQuantity && orderTotal) {
+        confirmationMessage.innerHTML =
+            "Your order has been placed successfully. " +
+            orderQuantity + " " + orderType.toLowerCase() +
+            " ticket(s) for " + orderDate +
+            ". Total: $" + orderTotal
+    } else {
+        confirmationMessage.innerHTML =
+            "Your order has been placed successfully."
+    }
+</script>
+
+</body>
+</html>

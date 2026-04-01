@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets | MonoMuse</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- JS -->
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="nav_bar">
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+
+        <div class="nav_links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html" class="cta active">Buy Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <h1>Buy Tickets</h1>
+
+        <p>
+            Browse ticket pricing and available dates below. Click Buy Now to begin your purchase.
+        </p>
+
+        <!-- TICKET PRICING TABLE -->
+        <table>
+            <tr>
+                <th>Ticket Type</th>
+                <th>Description</th>
+                <th>Includes</th>
+                <th>Duration</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Adult</td>
+                <td>General admission for ages 18 and over</td>
+                <td>Full access to all exhibitions and interactive installations</td>
+                <td>All-day access</td>
+                <td>$18</td>
+            </tr>
+            <tr>
+                <td>Student</td>
+                <td>Valid student ID required</td>
+                <td>Discounted access with student ID</td>
+                <td>All-day access</td>
+                <td>$12</td>
+            </tr>
+            <tr>
+                <td>Member</td>
+                <td>Valid member ID required</td>
+                <td>Priority entry and exclusive previews</td>
+                <td>All-day plus early entry</td>
+                <td>$8</td>
+            </tr>
+        </table>
+
+        <h2>Hours of Operation</h2>
+
+        <table>
+            <tr>
+                <th>Day of the Week</th>
+                <th>Open Hours</th>
+            </tr>
+            <tr>
+                <td>Monday – Friday</td>
+                <td>10:00 AM – 6:00 PM</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>10:00 AM – 8:00 PM</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>12:00 PM – 5:00 PM</td>
+            </tr>
+        </table>
+
+        <!-- AVAILABLE DATES TABLE -->
+        <h2>Available Dates This Month</h2>
+
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Availability</th>
+                <th>Spots Left</th>
+                <th>Action</th>
+            </tr>
+
+            <!-- Each button now redirects to checkout page -->
+            <!-- This supports the required funnel: Tickets → Checkout -->
+
+            <tr>
+                <td>April 5, 2026</td>
+                <td><span class="available">Available</span></td>
+                <td>22</td>
+                <td>
+                    <button onclick="goToCheckout('April 5, 2026')">
+                        Buy Now
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>April 12, 2026</td>
+                <td><span class="available">Available</span></td>
+                <td>38</td>
+                <td>
+                    <button onclick="goToCheckout('April 12, 2026')">
+                        Buy Now
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>April 19, 2026</td>
+                <td><span class="available">Available</span></td>
+                <td>45</td>
+                <td>
+                    <button onclick="goToCheckout('April 19, 2026')">
+                        Buy Now
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>April 26, 2026</td>
+                <td><span class="available">Available</span></td>
+                <td>52</td>
+                <td>
+                    <button onclick="goToCheckout('April 26, 2026')">
+                        Buy Now
+                    </button>
+                </td>
+            </tr>
+
+        </table>
+
+        <!-- NOTE:
+             The purchase form was moved to checkout.html
+             to properly implement the funnel required:
+             Tickets → Checkout → Confirmation
+        -->
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+
+</div>
+
+</body>
+</html>

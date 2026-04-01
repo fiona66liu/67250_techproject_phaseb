@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | MonoMuse</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Site JavaScript -->
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    </header>
+
+    <nav class="nav_bar">
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+
+        <div class="nav_links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html" class="cta">Buy Tickets</a>
+            <a href="checkout.html" class="active">Checkout</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <h1>Checkout</h1>
+
+        <p>
+            Complete your museum ticket purchase below. All tickets are priced at $18 each for this simulated checkout.
+        </p>
+
+        <section class="checkout_layout">
+
+            <form id="checkoutForm" class="checkout_form" novalidate>
+                <h2>Purchase Details</h2>
+
+                <label for="visitDate">Visit Date:</label><br>
+                <input type="date" id="visitDate" name="visitDate" required>
+                <p id="dateError" class="error_message"></p>
+
+                <label for="ticketType">Ticket Type:</label><br>
+                <select id="ticketType" name="ticketType" required>
+                    <option value="">Select ticket type</option>
+                    <option value="general">General</option>
+                    <option value="student">Student</option>
+                    <option value="member">Member</option>
+                </select>
+                <p id="typeError" class="error_message"></p>
+
+                <label for="quantity">Ticket Quantity:</label><br>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" step="1" required>
+                <p id="quantityError" class="error_message"></p>
+
+                <p id="totalPrice" class="price_total">Total: $0</p>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
+                <p id="emailError" class="error_message"></p>
+
+                <label for="zip">Zip Code (optional):</label><br>
+                <input type="text" id="zip" name="zip" inputmode="numeric" maxlength="5">
+                <p id="zipError" class="error_message"></p>
+
+                <label class="checkbox_label" for="mailingList">
+                    <input type="checkbox" id="mailingList" name="mailingList">
+                    Join our mailing list
+                </label>
+
+                <button type="submit">Place Order</button>
+            </form>
+
+            <aside class="support_card">
+                <h3>Support MonoMuse</h3>
+
+                <p>
+                    Interested in supporting the museum beyond your visit? Consider becoming a member
+                    or making a donation to help MonoMuse continue bringing together art, technology,
+                    and community.
+                </p>
+
+                <div class="support_details">
+                    <h4>Member Benefits</h4>
+                    <ul>
+                        <li>Priority access to exhibitions</li>
+                        <li>Invitations to special events</li>
+                        <li>Exclusive previews of new collections</li>
+                    </ul>
+
+                    <h4>Ways to Support</h4>
+                    <p>
+                        Memberships and donations help fund exhibitions, educational programming,
+                        and interactive experiences for future visitors.
+                    </p>
+                </div>
+
+                <div class="support_actions">
+                    <button type="button">Become a Member</button>
+                    <button type="button">Donate</button>
+                </div>
+
+                <div class="support_contact">
+                    <h4>Contact Us</h4>
+
+                    <p>
+                        Have questions about tickets, memberships, or upcoming exhibitions?
+                        Our team is happy to help.
+                    </p>
+
+                    <p><strong>Email:</strong> info@monomuse.org</p>
+                    <p><strong>Phone:</strong> (309) 696-8639</p>
+
+                    <p><strong>Address:</strong><br>
+                        222 SW Washington St<br>
+                        Peoria, IL 61602
+                    </p>
+                </div>
+            </aside>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+
+</div>
+
+</body>
+</html>

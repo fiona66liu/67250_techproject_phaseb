@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../static/style.css">
+
+    <title>Exhibitions | MonoMuse</title>
+
+    <!-- Site JavaScript -->
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="addYear()">
+
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    </header>
+
+    <nav class="nav_bar">
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+
+        <div class="nav_links" id="navLinks">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html" class="active">Exhibitions</a>
+            <a href="tickets.html" class="cta">Buy Tickets</a>
+            <a href="checkout.html">Checkout</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <h1>Exhibitions</h1>
+
+        <h2>Exhibition 1: Digital Dreams: Art in the Age of Algorithms</h2>
+        <p>
+            This exhibition explores how artists are using algorithms, artificial intelligence, and generative tools
+            to create new forms of digital expression. Through interactive displays and dynamic visuals, visitors can
+            see how machines and human creativity work together to produce art that evolves in real time.
+        </p>
+
+        <h2>Exhibition 2: Code & Canvas: The Language of Creative Technology</h2>
+        <p>
+            Code & Canvas highlights the ways programming has become a medium for artistic creation. Featuring works
+            by digital artists and designers, the exhibition showcases installations, projections, and interactive
+            pieces that reveal how lines of code can transform into immersive visual experiences.
+        </p>
+
+        <!-- Interactive gallery/slideshow required by rubric -->
+        <section class="gallery_section">
+            <h2>Gallery</h2>
+            <p>
+                Browse our featured Titanic exhibit using the interactive gallery below.
+            </p>
+
+            <div class="gallery_viewer">
+                <img id="galleryImage" class="gallery_image" src="../images/gallery1.jpg" alt="Featured exhibition image at MonoMuse">
+
+                <div class="gallery_controls">
+                    <button type="button" onclick="previousSlide()" aria-label="View previous gallery image">← Previous</button>
+                    <button type="button" onclick="nextSlide()" aria-label="View next gallery image">Next →</button>
+                    <span id="galleryCounter" class="gallery_counter">1 / 3</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p id="copyYear"></p>
+    </footer>
+
+</div>
+
+</body>
+</html>
